@@ -1,6 +1,8 @@
 package com.example.tpbase.model;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 import java.io.Serializable;
 
@@ -51,4 +53,17 @@ public class Employee implements Serializable {
                 + ", lastname=" + lastname + "]";
     }
 
+    // adding manytoone
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "dept_id", insertable = false,updatable = false)
+    @Fetch(FetchMode.JOIN)
+    private Departement department;
+
+    public Departement getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Departement department) {
+        this.department = department;
+    }
 }
