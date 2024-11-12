@@ -1,10 +1,13 @@
 package com.example.tpbase.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "EMPLOYEE")
@@ -66,4 +69,14 @@ public class Employee implements Serializable {
     public void setDepartment(Departement department) {
         this.department = department;
     }
+
+    @ManyToMany(fetch = FetchType.LAZY,cascade = {
+                    CascadeType.PERSIST,
+                    CascadeType.MERGE
+            })
+    @JoinTable (name ="Emp_proj", joinColumns = @JoinColumn(name ="Employee_id"),
+            inverseJoinColumns = @JoinColumn(name = "Project_id"))
+    @JsonIgnore
+    private Set<Project> projects = new HashSet();
+
 }
