@@ -1,0 +1,9 @@
+com\example\tpbase\model\Computer.class
+com\example\tpbase\model\Employee.class
+com\example\tpbase\repository\EmployeeRepository.class
+com\example\tpbase\TpbaseApplication.class
+com\example\tpbase\model\Project.class
+com\example\tpbase\repository\ProjectRepository.class
+com\example\tpbase\model\Departement.class
+com\example\tpbase\repository\ComputerRepository.class
+com\example\tpbase\repository\DepartementRepository.class

@@ -1,0 +1,34 @@
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+    <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+</head>
+<body>
+<div class="col-5">
+    <div class="container">
+        <div class="card">
+            <div class="card-header bg-info text-center text-white">
+                <h3>Bienvenu dans l'application</h3>
+            </div>
+            <div class="card-body">
+                <form>
+                    <!--<a th:href="@{/computer/register}"
+                    class= "btn btn-success ">Ajouter un computer <i class="fa fa-plus-square" aria-hidden="true"></i></a> -->
+                    <p><a
+                            th:href="@{/computer/getAllComputers}" class= "btn btn-primary">Gestion des computers</a><br>
+                    <p><a
+                            th:href="@{/departement/getAllDepartements}" class= "btn btn-primary">Gestion des Departements</a><br>
+                    <p><a
+                            th:href="@{/employee/getAllEmployees}" class= "btn btn-primary">Gestion des employés</a><br>
+                    <p><a
+                            th:href="@{/projects/getAllProjects}" class= "btn btn-primary">Gestion des projets</a><br>
+                </form>
+            </div>
+        </div>
+    </div> </div>
+</body>
+</html>
